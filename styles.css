@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#countdown-friday {
+    font-size: xx-large;
+    color: red;
+    position: absolute;
+    top: 20px;
+}
+
+#countdown-10s {
+    font-size: xx-large;
+    color: red;
+    position: absolute;
+    margin-bottom: 500px;
+}
+
+#video-section {
+    border: 3px solid red;
+    width: 560px;
+    height: 315px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#playButton {
+    background-color: #000000;
+    color: red;
+    border-color: red;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: large;
+    cursor: pointer;
+}
+
+#testPlayButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: large;
+    cursor: pointer;
+}
