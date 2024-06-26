@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,3 +56,62 @@
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una aventura de altura</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+        }
+        #countdown {
+            font-size: 3em;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="countdown"></div>
+
+    <script>
+        function getNextFriday() {
+            const now = new Date();
+            const dayOfWeek = now.getDay();
+            const daysUntilFriday = (5 + 7 - dayOfWeek) % 7;
+            const friday = new Date(now);
+            friday.setDate(now.getDate() + daysUntilFriday);
+            friday.setHours(24, 0, 0, 0); // 12 de la noche (00:00)
+            return friday;
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const countDownDate = getNextFriday().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                document.getElementById("countdown").innerHTML = "¡Tiempo agotado!";
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
+>>>>>>> ac5b5628f7415d45fe77a0ce9c2f61c9e49d9d43
