@@ -6,45 +6,35 @@ body {
     height: 100vh;
     background-color: #000000;
     font-family: Arial, sans-serif;
-    overflow: hidden;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
 }
 
 #countdown-friday {
-    font-size: xx-large;
+    font-size: 50px;
     color: red;
     position: absolute;
-    top: 20px;
+    top: 200px;
 }
 
-#countdown-10s {
-    font-size: xx-large;
+#text-section {
+    margin-top: 100px;
+    max-width: 800px;
+    text-align: left;
     color: red;
-    position: absolute;
-    margin-bottom: 500px;
 }
 
-#video-section {
-    border: 3px solid red;
-    width: 560px;
-    height: 315px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#text-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
 }
 
-#playButton {
-    background-color: #000000;
-    color: red;
-    border-color: red;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: large;
-    cursor: pointer;
+#text-section p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
 }
 
-#testPlayButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: large;
-    cursor: pointer;
+.strikethrough {
+    text-decoration: line-through;
 }

@@ -22,53 +22,11 @@ function updateCountdownFriday() {
 
     if (distance < 0) {
         clearInterval(intervalFriday);
-        document.getElementById("countdown-friday").innerHTML = "¡Tiempo agotado!";
+        document.getElementById("countdown-friday").style.display = "none"; // Ocultar el contador
+        document.getElementById("text-section").style.display = "block"; // Mostrar el texto
     }
 }
 
-function getTenMinutesFromNow() {
-    const now = new Date();
-    const tenMinutesLater = new Date(now.getTime() + 10 * 60 * 1000); // 10 minutos a partir de ahora
-    return tenMinutesLater;
-}
-
-function startCountdownTenMinutes() {
-    const countdownElement = document.getElementById("countdown-10s");
-    const now = new Date().getTime();
-    const tenMinutesLater = getTenMinutesFromNow().getTime();
-
-    const intervalTenMinutes = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = tenMinutesLater - now;
-
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownElement.innerHTML = `${minutes}m ${seconds}s`;
-
-        if (distance < 0) {
-            clearInterval(intervalTenMinutes);
-            countdownElement.innerHTML = '<button id="playButton">PLAY</button>';
-            document.getElementById("playButton").addEventListener("click", () => {
-                playVideo();
-            });
-        }
-    }, 1000);
-}
-
-function playVideo() {
-    const video = document.getElementById("myVideo");
-    video.style.display = "block";
-    const src = video.src;
-    video.src = src + "&autoplay=1"; // Añadir autoplay=1 para reproducir el video automáticamente
-}
-
 document.addEventListener("DOMContentLoaded", (event) => {
-    startCountdownTenMinutes();
-    document.getElementById("testPlayButton").addEventListener("click", () => {
-        playVideo();
-    });
-
-    // Iniciar el contador para el viernes a las 12 de la noche
     const intervalFriday = setInterval(updateCountdownFriday, 1000);
 });
